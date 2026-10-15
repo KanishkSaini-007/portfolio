@@ -104,7 +104,7 @@ nav a{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform
 nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--lime);transition:width .35s cubic-bezier(.65,0,.35,1)}
 nav a:hover,nav a.active{color:var(--text)}
 nav a:hover::after,nav a.active::after{width:100%}
-@media (max-width:640px){nav a{font-size:10px;letter-spacing:.1em}}
+@media (max-width:640px){.logo{font-size:14px}nav{gap:10px}nav a{font-size:9px;letter-spacing:.06em;padding:6px 0}}
 
 /* sections */
 section{min-height:100vh;padding:120px clamp(20px,6vw,72px) 90px;max-width:1280px;margin:0 auto;display:flex;flex-direction:column;justify-content:center}
@@ -115,9 +115,10 @@ h2.sec-title{font-family:var(--disp);font-weight:800;font-size:clamp(34px,5vw,58
 /* hero */
 #home{justify-content:center;position:relative}
 .hero-tag{font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:var(--lime-soft);text-transform:uppercase;margin-bottom:26px}
-h1.hero-name{font-family:var(--disp);font-weight:800;font-size:clamp(52px,10vw,124px);line-height:.98;letter-spacing:-.02em}
+h1.hero-name{font-family:var(--disp);font-weight:800;font-size:clamp(44px,11.5vw,124px);line-height:.98;letter-spacing:-.02em}
 h1.hero-name .word{display:inline-block;white-space:nowrap}
 h1.hero-name .ch{display:inline-block}
+h1.hero-name .l2{display:block}
 h1.hero-name .l2 .ch{color:transparent;-webkit-text-stroke:1.5px rgba(166,230,40,.85)}
 .hero-sub{margin-top:26px;max-width:520px;color:var(--muted);font-size:clamp(15px,1.6vw,18px);line-height:1.7;font-weight:300}
 .hero-sub b{color:var(--text);font-weight:500}
@@ -526,7 +527,7 @@ if(window.THREE)(function(){
     var wide=window.innerWidth>900;
     var x=wide?3.1:0;
     knot.position.x=knotGlow.position.x=core.position.x=ring1.position.x=ring2.position.x=x;
-    var s=wide?1:.72;
+    var s=wide?1:Math.max(.38,Math.min(.9,window.innerWidth/850));
     knot.scale.set(s,s,s);knotGlow.scale.set(s,s,s);core.scale.set(s,s,s);
     knot.position.y=knotGlow.position.y=core.position.y=wide?0:.6;
   }
