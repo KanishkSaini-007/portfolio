@@ -549,6 +549,10 @@ if(window.THREE)(function(){
     requestAnimationFrame(animate);
     if(document.hidden)return;
     t+=REDUCED?.002:.005;
+    var fade=Math.max(0,1-scrollYPos/(window.innerHeight*.85));
+    knot.material.opacity=.32*fade;knotGlow.material.opacity=.07*fade;core.material.opacity=.16*fade;
+    ring1.material.opacity=.7*fade;ring2.material.opacity=.4*fade;
+    knot.visible=knotGlow.visible=core.visible=ring1.visible=ring2.visible=fade>.02;
     knot.rotation.x=t*.7;knot.rotation.y=t*.9;
     knotGlow.rotation.x=t*.7;knotGlow.rotation.y=t*.9;
     core.rotation.x=-t*1.1;core.rotation.y=-t*.8;
