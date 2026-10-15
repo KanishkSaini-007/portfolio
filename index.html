@@ -703,8 +703,19 @@ function scrambleTitle(el){
     if(Math.abs(e.clientX-downX)>6||Math.abs(e.clientY-downY)>6)return;
     var t=document.elementFromPoint(e.clientX,e.clientY);
     var card=t&&t.closest?t.closest('.pcard'):null;
-    if(!card)return;
-    var a=t.closest('a');
+    var a=card&&t.closest('a');
+    if(!card){
+      var f=ring.querySelector('.pcard.front');
+      if(!f)return;
+      var fr=f.getBoundingClientRect();
+      if(e.clientX<fr.left||e.clientX>fr.right||e.clientY<fr.top||e.clientY>fr.bottom)return;
+      card=f;
+      var as=f.querySelectorAll('a');
+      for(var k=0;k<as.length;k++){
+        var ar=as[k].getBoundingClientRect();
+        if(e.clientX>=ar.left&&e.clientX<=ar.right&&e.clientY>=ar.top&&e.clientY<=ar.bottom){a=as[k];break;}
+      }
+    }
     window.open(a?a.href:card.dataset.href,'_blank','noopener');
   });
   ring.addEventListener('click',function(e){if(e.detail>0&&e.target.closest&&e.target.closest('a'))e.preventDefault();},true);
