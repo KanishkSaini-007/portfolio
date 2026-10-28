@@ -285,9 +285,9 @@ footer .lime{color:var(--lime)}
     <div class="about-grid">
       <div class="about-copy" data-anim>
         <p>I'm <b>Kanishk Saini</b>, a first-year engineering student in the <b>MBA Tech program at NMIMS, Shirpur</b>. I got tired of doing attendance math in my head, formatting resumes by hand, and arguing over who owes what after dinner — <span class="lime">so I built apps for all of it.</span></p>
-        <p>Every project in this portfolio started as a real irritation and ended as a <b>live, working product</b> — plain HTML, CSS and JavaScript, no frameworks, no accounts, no tracking. Fifteen apps shipped and counting.</p>
+        <p>Every project in this portfolio started as a real irritation and ended as a <b>live, working product</b> — plain HTML, CSS and JavaScript, no frameworks, no accounts, no tracking. Sixteen apps shipped and counting.</p>
         <div class="stat-row">
-          <div class="stat"><b data-count="15">0</b><span>Apps shipped</span></div>
+          <div class="stat"><b data-count="16">0</b><span>Apps shipped</span></div>
           <div class="stat"><b data-count="6">0</b><span>Tools in stack</span></div>
           <div class="stat"><b data-count="1">0</b><span>Rule: no bloat</span></div>
         </div>
@@ -310,14 +310,14 @@ footer .lime{color:var(--lime)}
   <section id="projects">
     <div class="head" data-anim>
       <p class="kicker">Projects</p>
-      <h2 class="sec-title">Fifteen fixes,<br>live on the web.</h2>
+      <h2 class="sec-title">Sixteen fixes,<br>live on the web.</h2>
     </div>
     <div class="stage" id="stage" data-anim>
       <div class="ring" id="ring"></div>
     </div>
     <div class="car-nav" data-anim>
       <button class="car-btn" id="prevBtn" aria-label="Previous project">&#8592;</button>
-      <div class="car-count"><b id="curIdx">01</b> / 15</div>
+      <div class="car-count"><b id="curIdx">01</b> / 16</div>
       <button class="car-btn" id="nextBtn" aria-label="Next project">&#8594;</button>
     </div>
   </section>
@@ -371,7 +371,7 @@ var REDUCED=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   var lines=[
     ['&gt; initialising render core','OK'],
     ['&gt; loading 3D engine [three.r128]','OK'],
-    ['&gt; decrypting project vault [15 items]','OK'],
+    ['&gt; decrypting project vault [16 items]','OK'],
     ['&gt; compiling annoyance fixes','OK'],
     ['&gt; welcome.','']
   ];
@@ -670,7 +670,9 @@ function scrambleTitle(el){
      img:'https://raw.githubusercontent.com/KanishkSaini-007/CGPAPlanner/main/docs/desktop.svg',
      repo:'CGPAPlanner'},
     {n:'NextClass',d:'A weekly timetable that answers "what class is next" with a live now/next board and countdown. No login, local-first.',
-     img:'https://raw.githubusercontent.com/KanishkSaini-007/NextClass/main/docs/desktop.svg'}
+     img:'https://raw.githubusercontent.com/KanishkSaini-007/NextClass/main/docs/desktop.svg'},
+    {n:'SpendLeft',d:'A private allowance tracker: log expenses and it shows what you can safely spend each day so the money lasts the month.',
+     img:'https://raw.githubusercontent.com/KanishkSaini-007/SpendLeft/main/docs/desktop.svg'}
   ];
   var ring=document.getElementById('ring'),
       stage=document.getElementById('stage'),
@@ -760,4 +762,4 @@ function scrambleTitle(el){
 })();
 </script>
 </body>
-  </html>
+</html>
